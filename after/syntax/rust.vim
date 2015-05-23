@@ -1,2 +1,2 @@
 syn match Braces display '[{}()\[\]]'
-hi Braces ctermfg=red
+hi Braces ctermfg=white
