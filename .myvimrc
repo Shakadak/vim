@@ -1,15 +1,3 @@
-" **************************************************************************** "
-"                                                                              "
-"                                                         :::      ::::::::    "
-"    .myvimrc                                           :+:      :+:    :+:    "
-"                                                     +:+ +:+         +:+      "
-"    By: zaz <zaz@staff.42.fr>                      +#+  +:+       +#+         "
-"                                                 +#+#+#+#+#+   +#+            "
-"    Created: 2013/06/15 12:36:36 by zaz               #+#    #+#              "
-"    Updated: 2015/05/23 13:43:30 by npineau          ###   ########.fr        "
-"                                                                              "
-" **************************************************************************** "
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -22,7 +10,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'wting/rust.vim'
+Plugin 'scrooloose/syntastic'
+
+Plugin 'rust-lang/rust.vim'
+
+Plugin 'elixir-lang/vim-elixir'
+
+Plugin 'idris-hackers/idris-vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -66,11 +60,13 @@ filetype plugin indent on    " required
 "set cursorline
 
 syntax enable
+syntax on
+filetype on
 set number
 set cursorline
 set cuc
 set mouse=a
-set noexpandtab
+set expandtab
 set tabstop=4
 set shiftwidth=4
 au BufWinEnter * let w:m2=matchadd('Tab', '\t', -1)
