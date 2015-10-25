@@ -84,3 +84,5 @@ hi LowVisibilityBraces ctermbg=darkgreen
 set background=light
 
 let g:haddock_browser="/usr/bin/firefox"
+
+set backspace=2
