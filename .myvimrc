@@ -18,6 +18,10 @@ Plugin 'elixir-lang/vim-elixir'
 
 Plugin 'idris-hackers/idris-vim'
 
+Plugin 'lukerandall/haskellmode-vim'
+
+Plugin 'neovimhaskell/haskell-vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -78,3 +82,5 @@ highlight Tab ctermbg=darkgreen
 highlight Space ctermbg=darkred
 hi LowVisibilityBraces ctermbg=darkgreen
 set background=light
+
+let g:haddock_browser="/usr/bin/firefox"
