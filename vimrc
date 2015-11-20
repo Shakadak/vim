@@ -22,6 +22,8 @@ Plugin 'lukerandall/haskellmode-vim'
 
 Plugin 'neovimhaskell/haskell-vim'
 
+Plugin 'altercation/vim-colors-solarized'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -67,9 +69,9 @@ syntax enable
 syntax on
 filetype on
 set number
-set cursorline
-set cuc
-set mouse=a
+"set cursorline
+"set cuc
+"set mouse=a
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -81,7 +83,9 @@ syn match LowVisibilityBraces display '[{}]'
 highlight Tab ctermbg=darkgreen
 highlight Space ctermbg=darkred
 hi LowVisibilityBraces ctermbg=darkgreen
-set background=light
+
+set background=dark
+colorscheme solarized
 
 let g:haddock_browser="/usr/bin/firefox"
 
