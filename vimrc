@@ -84,7 +84,7 @@ highlight Tab ctermbg=darkgreen
 highlight Space ctermbg=darkred
 hi LowVisibilityBraces ctermbg=darkgreen
 
-set background=dark
+set background=light
 colorscheme solarized
 
 let g:haddock_browser="/usr/bin/firefox"
