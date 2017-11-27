@@ -1,5 +1,6 @@
+set noexpandtab
 syn match Braces display '[{}]'
-hi Braces ctermfg=white
+hi Braces ctermfg=grey
 syn match Coma display ','
 hi Coma ctermfg=grey
 syn match Semicolon display ';'
