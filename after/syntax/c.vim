@@ -9,4 +9,4 @@ syn match Parens display '[()]'
 hi Parens ctermfg=grey
 syn match Brackets display '[\[\]]'
 hi Brackets ctermfg=red
-syn match Type "t_[a-z_]*"
+syn match Type "[^A-Za-z_]t_[a-z_]*"
