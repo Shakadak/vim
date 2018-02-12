@@ -10,11 +10,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 Plugin 'rust-lang/rust.vim'
 
-Plugin 'elixir-lang/vim-elixir'
+Plugin 'elixir-editors/vim-elixir'
 
 Plugin 'idris-hackers/idris-vim'
 
