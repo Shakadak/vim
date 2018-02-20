@@ -14,8 +14,6 @@ Plugin 'vim-syntastic/syntastic'
 
 Plugin 'rust-lang/rust.vim'
 
-Plugin 'elixir-editors/vim-elixir'
-
 Plugin 'idris-hackers/idris-vim'
 
 Plugin 'lukerandall/haskellmode-vim'
@@ -23,6 +21,10 @@ Plugin 'lukerandall/haskellmode-vim'
 Plugin 'neovimhaskell/haskell-vim'
 
 Plugin 'altercation/vim-colors-solarized'
+
+Plugin 'elixir-editors/vim-elixir'
+
+Plugin 'slashmili/alchemist.vim'
 
 " Stephen Diehl
 
