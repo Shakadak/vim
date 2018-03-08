@@ -8,3 +8,7 @@ syn match Parens display '[()]'
 hi Parens ctermfg=grey
 syn match Brackets display '[\[\]]'
 hi Brackets ctermfg=red
+
+set tabstop=2
+set shiftwidth=2
+set expandtab

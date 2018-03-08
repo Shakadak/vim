@@ -10,21 +10,25 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" General
 Plugin 'vim-syntastic/syntastic'
+Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'rust-lang/rust.vim'
 
 Plugin 'idris-hackers/idris-vim'
 
+" Haskell
 Plugin 'lukerandall/haskellmode-vim'
-
 Plugin 'neovimhaskell/haskell-vim'
 
-Plugin 'altercation/vim-colors-solarized'
-
+" Elixir
 Plugin 'elixir-editors/vim-elixir'
-
 Plugin 'slashmili/alchemist.vim'
+
+" Javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 " Stephen Diehl
 
