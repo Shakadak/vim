@@ -1,88 +1,73 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-"
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
+call plug#begin()
 " General
-Plugin 'vim-syntastic/syntastic'
-Plugin 'altercation/vim-colors-solarized'
+Plug 'vim-syntastic/syntastic'
+Plug 'altercation/vim-colors-solarized'
 
-Plugin 'rust-lang/rust.vim'
+" Language Client
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
-Plugin 'idris-hackers/idris-vim'
+Plug 'rust-lang/rust.vim'
+
+Plug 'idris-hackers/idris-vim'
 
 " Haskell
-Plugin 'lukerandall/haskellmode-vim'
-Plugin 'neovimhaskell/haskell-vim'
+Plug 'lukerandall/haskellmode-vim'
+Plug 'neovimhaskell/haskell-vim'
 
 " Elixir
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
 " Javascript
-Plugin 'pangloss/vim-javascript'
-Plugin 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+
+" Reason
+Plug 'reasonml-editor/vim-reason-plus'
 
 " Stephen Diehl
 
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate'
-Plugin 'godlygeek/tabular'
-Plugin 'ervandew/supertab'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/vimproc.vim'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'godlygeek/tabular'
+Plug 'ervandew/supertab'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/vimproc.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
-
-" " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#end()
 
 "Put your custom Vim configuration here
 
 "Better command completion
 "set wildmenu
 "set wildmode=list:longest
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ }
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
 
 "Show current line
 "set cursorline
@@ -97,14 +82,14 @@ set number
 set expandtab
 set tabstop=4
 set shiftwidth=4
-au BufWinEnter * let w:m2=matchadd('Tab', '\t', -1)
-au BufWinEnter * let w:m3=matchadd('Space', '\s\+$\| \+\ze\t', -1)
+"au BufWinEnter * let w:m2=matchadd('Tab', '\t', -1)
+"au BufWinEnter * let w:m3=matchadd('Space', '\s\+$\| \+\ze\t', -1)
 "set list listchars=tab:▸\ ,trail:·
-syn match LowVisibilityBraces display '[{}]'
+"syn match LowVisibilityBraces display '[{}]'
 
-highlight Tab ctermbg=darkgreen
-highlight Space ctermbg=darkred
-hi LowVisibilityBraces ctermbg=darkgreen
+"highlight Tab ctermbg=darkgreen
+"highlight Space ctermbg=darkred
+"hi LowVisibilityBraces ctermbg=darkgreen
 
 set background=light
 colorscheme solarized
