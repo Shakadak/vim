@@ -21,7 +21,7 @@ Plug 'neovimhaskell/haskell-vim'
 
 " Elixir
 Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim'
+"Plug 'slashmili/alchemist.vim'
 
 " Javascript
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'js', 'jsx', 'javascript.jsx']}
@@ -44,7 +44,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'godlygeek/tabular'
 Plug 'ervandew/supertab'
 Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
 call plug#end()
 
