@@ -2,8 +2,9 @@ set nocompatible              " be iMproved, required
 
 call plug#begin()
 " General
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'altercation/vim-colors-solarized'
+Plug 'w0rp/ale'
 
 " Language Client
 Plug 'autozimu/LanguageClient-neovim', {
@@ -33,12 +34,12 @@ Plug 'reasonml-editor/vim-reason-plus'
 
 " Stephen Diehl
 
-Plug 'eagletmt/ghcmod-vim'
+"Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tomtom/tlib_vim'
+" Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'godlygeek/tabular'
@@ -101,22 +102,22 @@ set backspace=2
 
 "Haskell
 "	Syntastic
-map <Leader>s :SyntasticToggleMode<CR>
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-"	GHC-mod
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
+"" map <Leader>s :SyntasticToggleMode<CR>
+"" 
+"" set statusline+=%#warningmsg#
+"" set statusline+=%{SyntasticStatuslineFlag()}
+"" set statusline+=%*
+"" 
+"" let g:syntastic_always_populate_loc_list = 1
+"" let g:syntastic_auto_loc_list = 0
+"" let g:syntastic_check_on_open = 0
+"" let g:syntastic_check_on_wq = 0
+"" 
+"" "	GHC-mod
+"" map <silent> tw :GhcModTypeInsert<CR>
+"" map <silent> ts :GhcModSplitFunCase<CR>
+"" map <silent> tq :GhcModType<CR>
+"" map <silent> te :GhcModTypeClear<CR>
 "	Supertab
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
@@ -132,7 +133,7 @@ let g:haskellmode_completion_ghc = 1
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 "	Nerdtree
-map <Leader>n :NERDTreeToggle<CR>
+" map <Leader>n :NERDTreeToggle<CR>
 
 "	Tabularize
 let g:haskell_tabular = 1
