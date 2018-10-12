@@ -147,3 +147,20 @@ map <silent> <Leader>t :CtrlP()<CR>
 noremap <leader>b<space> :CtrlPBuffer<cr>
 let g:ctrlp_custom_ignore = '\v[\/]dist$'
 
+" ALE
+
+function CheckIfFileExists(filename)
+  if filereadable(a:filename)
+    return 1
+  endif
+
+  return 0
+endfunction
+
+" Disable GHC linter if in a Haskell Stack project
+if (CheckIfFileExists("./stack.yaml") == 1)
+  " you can include any other linters in this list too
+  let g:ale_linters = {
+  \   'haskell': ['hlint', 'stack_build'],
+  \}
+endif
