@@ -41,9 +41,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'scrooloose/nerdcommenter'
 " Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'garbas/vim-snipmate'
-Plug 'godlygeek/tabular'
-Plug 'ervandew/supertab'
+" Plug 'garbas/vim-snipmate'
+" Plug 'godlygeek/tabular'
+" Plug 'ervandew/supertab'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
@@ -164,3 +164,5 @@ if (CheckIfFileExists("./stack.yaml") == 1)
   \   'haskell': ['hlint', 'stack_build'],
   \}
 endif
+
+let g:ale_linters_explicit = 1
