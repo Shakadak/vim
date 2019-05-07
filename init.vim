@@ -93,7 +93,11 @@ set shiftwidth=4
 "highlight Space ctermbg=darkred
 "hi LowVisibilityBraces ctermbg=darkgreen
 
+"set term=screen-256color
+"set t_ut=
+"set t_Co=256
 set background=light
+let g:solarized_termcolors=256
 colorscheme solarized
 
 let g:haddock_browser="/usr/bin/firefox"
