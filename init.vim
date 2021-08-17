@@ -72,8 +72,10 @@ set backspace=2
 
 " Haskell Language Server config [HLScdb]
 lua << EOF
-require'nvim_lsp'.hls.setup{}
-require'nvim_lsp'.elixirls.setup{}
+require'lspconfig'.hls.setup{}
+require'lspconfig'.elixirls.setup{
+    cmd = { "/home/nathanael/.local/bin/elixirls/language_server.sh" }
+}
 EOF
 
 nnoremap <silent> <c-]>     <cmd>lua vim.lsp.buf.definition()<CR>
