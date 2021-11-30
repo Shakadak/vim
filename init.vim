@@ -26,6 +26,9 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript', 'js', 'jsx', 'javascript.jsx']}
 " Reason
 Plug 'reasonml-editor/vim-reason-plus'
 
+" Purescript
+Plug 'purescript-contrib/purescript-vim'
+
 call plug#end()
 
 "Put your custom Vim configuration here
@@ -76,6 +79,8 @@ require'lspconfig'.hls.setup{}
 require'lspconfig'.elixirls.setup{
     cmd = { "/home/nathanael/.local/bin/elixirls/language_server.sh" }
 }
+require'lspconfig'.erlangls.setup{}
+require'lspconfig'.purescriptls.setup{}
 EOF
 
 nnoremap <silent> <c-]>     <cmd>lua vim.lsp.buf.definition()<CR>
@@ -87,4 +92,7 @@ nnoremap <silent> gr        <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0        <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW        <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd        <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <leader>d <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
+nnoremap <silent> <leader>d <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+
+
+let g:markdown_fenced_languages = ['css', 'elixir', 'ex=elixir', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'xml', 'html']
