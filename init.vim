@@ -67,7 +67,8 @@ set shiftwidth=4
 "set t_Co=256
 set background=light
 "let g:solarized_termcolors=256
-colorscheme solarized
+"colorscheme solarized
+set cursorline
 
 let g:haddock_browser="/usr/bin/firefox"
 
