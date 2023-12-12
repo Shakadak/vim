@@ -23,7 +23,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'neovimhaskell/haskell-vim'
 
 " Elixir
-" Plug 'elixir-editors/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 
 " Javascript
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'js', 'jsx', 'javascript.jsx']}
