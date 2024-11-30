@@ -86,3 +86,4 @@ let g:markdown_fenced_languages = ['css', 'elixir', 'ex=elixir', 'javascript', '
 
 require('tree-sitter')
 require('lsp')
+require('terminal')

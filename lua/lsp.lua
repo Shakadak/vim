@@ -3,7 +3,8 @@ require('lspconfig').hls.setup{
 }
 
 require('lspconfig').elixirls.setup{
-    cmd = { "/home/nathanael/.local/bin/elixirls/language_server.sh" }
+    -- cmd = { "/home/nathanael/.local/bin/elixirls/language_server.sh" }
+    cmd = { "elixir-ls" }
 }
 
 require('lspconfig').erlangls.setup{
