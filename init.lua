@@ -6,7 +6,8 @@ set nocompatible              " be iMproved, required
 
 call plug#begin()
 " General
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'shaunsingh/solarized.nvim'
 
 " Language Client
 Plug 'neovim/nvim-lspconfig'
@@ -23,7 +24,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'neovimhaskell/haskell-vim'
 
 " Elixir
-Plug 'elixir-editors/vim-elixir'
+"Plug 'elixir-editors/vim-elixir'
 
 " Javascript
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'js', 'jsx', 'javascript.jsx']}
@@ -71,9 +72,9 @@ set shiftwidth=4
 "set term=screen-256color
 "set t_ut=
 "set t_Co=256
-set background=light
+"set background=light
 "let g:solarized_termcolors=256
-colorscheme solarized
+"colorscheme solarized
 set cursorline
 
 let g:haddock_browser="/usr/bin/firefox"
@@ -82,8 +83,15 @@ set backspace=2
 
 
 let g:markdown_fenced_languages = ['css', 'elixir', 'ex=elixir', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'xml', 'html']
+
+set termguicolors
+
 ]])
 
+-- Color Scheme
+require('solarized').set()
+
+-- Deferred config
 require('tree-sitter')
 require('lsp')
 require('terminal')

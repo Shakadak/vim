@@ -13,6 +13,9 @@ require('lspconfig').erlangls.setup{
 require('lspconfig').purescriptls.setup{
 }
 
+require('lspconfig').tsserver.setup{
+}
+
 vim.cmd([[
 nnoremap <silent> gD        <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <c-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>
