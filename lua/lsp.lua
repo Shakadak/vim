@@ -2,9 +2,14 @@
 require('lspconfig').hls.setup{
 }
 
+-- Set up lspconfig.
+-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 require('lspconfig').elixirls.setup{
     -- cmd = { "/home/nathanael/.local/bin/elixirls/language_server.sh" }
-    cmd = { "elixir-ls" }
+    cmd = { "elixir-ls" },
+    capabilities = capabilities,
 }
 
 require('lspconfig').erlangls.setup{

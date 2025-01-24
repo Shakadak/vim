@@ -13,6 +13,9 @@ Plug 'shaunsingh/solarized.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/nvim-cmp'
+
 " Haskell Language Server config down below [HLScdb]
 
 " Rust
@@ -95,3 +98,4 @@ require('solarized').set()
 require('tree-sitter')
 require('lsp')
 require('terminal')
+require('cmp-lsp')
